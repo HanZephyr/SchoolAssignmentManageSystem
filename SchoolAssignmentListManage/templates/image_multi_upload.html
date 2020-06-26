@@ -1,0 +1,73 @@
+{% load static %}
+<div class="file-button" id="upload_image"
+{#     background-image:  url('{% static 'upload_multi_img/add.png' %}');#}
+     style="background-image:  url('./add.png');background-repeat: no-repeat;background-size: 64px;background-position: center">
+    <input type="{{ widget.type }}" name="{{ widget.name }}"{% if widget.value != None %}
+           value="{{ widget.value|stringformat:'s' }}"{% endif %} οnchange="uploadImage(this)"
+           id="id_imageUpload" accept="image/jpeg,image/jpg,image/png,image/gif" multiple>
+</div>
+<style type="text/css">
+    /*缩略图片样式*/
+    .selected-img {
+        width: 160px;
+        height: 100px;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        border: solid #b1c6c1 1px;
+        border-radius: 10px;
+        margin-right: 10px;
+    }
+  /*缩略图片聚焦样式*/
+    .selected-img:hover {
+        border: solid #25adc6 2px;
+    }
+/*上传图片按钮样式*/
+    .file-button {
+        width: 160px;
+        height: 100px;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        border: solid #b1c6c1 1px;
+        border-radius: 10px;
+        margin-right: 10px;
+    }
+/*上传图片按钮聚焦样式*/
+    .file-button:hover {
+        border: solid #25adc6 2px;
+    }
+
+    .file-button input {
+        position: absolute;
+        top: 0;
+        height: 100px;
+        opacity: 0;
+    }
+/*删除缩略图片icon聚焦样式*/
+    i:hover {
+        color: #0081C6;
+    }
+/*阿里云字体图标*/
+    @font-face {
+        font-family: 'iconfont';  /* project id 1361777 */
+        src: url('//at.alicdn.com/t/font_1361777_ufufbwqmfpa.eot');
+        src: url('//at.alicdn.com/t/font_1361777_ufufbwqmfpa.eot?#iefix') format('embedded-opentype'),
+        url('//at.alicdn.com/t/font_1361777_ufufbwqmfpa.woff2') format('woff2'),
+        url('//at.alicdn.com/t/font_1361777_ufufbwqmfpa.woff') format('woff'),
+        url('//at.alicdn.com/t/font_1361777_ufufbwqmfpa.ttf') format('truetype'),
+        url('//at.alicdn.com/t/font_1361777_ufufbwqmfpa.svg#iconfont') format('svg');
+    }
+
+    .iconfont {
+        font-family: "iconfont" !important;
+        font-size: 20px;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .icon-delete:before {
+        content: "\e63c";
+    }
+</style>
