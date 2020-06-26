@@ -97,7 +97,7 @@ SchoolAssignmentManageSystem/
 >| 文件名          | 注释                |
 >| --------------- | ------------------- |
 >| .gitignore      | git 忽略文件        |
->| LICENSE         | MIT授权文件         |
+>| LICENSE         | MIT许可证         |
 >| manage.py       | Django 项目命令工具 |
 >| README.md       | 说明文档            |
 >| requirments.txt | 项目代码主要依赖库  |
