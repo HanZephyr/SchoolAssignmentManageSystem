@@ -16,21 +16,19 @@
 | ------------------------------------------ | ---------------------------------------------------- | ------------------------------------------------ |
 | [冬酒暖阳](https://github.com/allwaysLove) | [mailto:1067764354@qq.com](mailto:1067764354@qq.com) | [博客：www.lifepoem.cn](https://www.lifepoem.cn) |
 
-## 界面展示
+## :postal_horn: 界面展示
 
 1. 后台管理界面
 
-    ![后台管理界面](https://cos.lifepoem.cn/assignments/imgs/20200626121657.png)
+    ![后台管理界面](.\images\后台管理界面.png)
 
 2. 作业管理界面
 
-    ![作业管理界面](https://cos.lifepoem.cn/assignments/imgs/20200626134401.png)
+    ![作业管理界面](.\images\作业管理界面.png)
 
 3. 获取接口简单使用说明
 
-    ![获取接口简单使用说明](https://cos.lifepoem.cn/assignments/imgs/20200626133850.png)
-
-
+    ![获取接口简单使用说明](.\images\获取接口简单使用说明.png)
 
 ## :hammer: 安装
 
