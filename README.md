@@ -70,29 +70,43 @@
 
 ```
 SchoolAssignmentManageSystem/
-├────.gitignore  					# git 忽略文件
-├────LICENSE  						# MIT授权文件
-├────manage.py  					# Django 项目命令工具
-├────README.md  					# 项目文档
-├────requirements.txt  				# 项目代码主要依赖库
-├────SchoolAssignmentListManage/  	# 应用目录
+├────.gitignore
+├────LICENSE
+├────manage.py
+├────README.md
+├────requirements.txt
+├────SchoolAssignmentListManage/
 │    ├────__init__.py
 │    ├────admin.py
 │    ├────apps.py
 │    ├────diy_widgets.py
-│    ├────models.py  				# 数据库模型
+│    ├────models.py
 │    ├────templates/
 │    │    ├────add.png
 │    │    └────image_multi_upload.html
 │    ├────tests.py
-│    ├────urls.py  					# 应用路由配置
-│    └────views.py  				# 视图
+│    ├────urls.py
+│    └────views.py
 └────SchoolAssignmentManageSystem/
      ├────__init__.py
-     ├────settings.py  				# Django项目配置
-     ├────urls.py  					# 项目路由配置
+     ├────settings.py
+     ├────urls.py
      └────wsgi.py
 ```
+
+>| 文件名          | 注释                |
+>| --------------- | ------------------- |
+>| .gitignore      | git 忽略文件        |
+>| LICENSE         | MIT授权文件         |
+>| manage.py       | Django 项目命令工具 |
+>| README.md       | 说明文档            |
+>| requirments.txt | 项目代码主要依赖库  |
+>| models.py       | 数据库模型          |
+>| urls.py         | 应用路由配置        |
+>| settings.py     | Django项目配置      |
+>| urls.py         | 项目路由配置        |
+
+
 
 
 
