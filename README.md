@@ -12,21 +12,23 @@
 
 ## :sparkling_heart: 作者
 
-| Author                                     | E-mail                                               | Blog                                     |
-| ------------------------------------------ | ---------------------------------------------------- | ---------------------------------------- |
-| [冬酒暖阳](https://github.com/allwaysLove) | [mailto:1067764354@qq.com](mailto:1067764354@qq.com) | [博客：www.lifepoem.cn](www.lifepoem.cn) |
+| Author                                     | E-mail                                               | Blog                                             |
+| ------------------------------------------ | ---------------------------------------------------- | ------------------------------------------------ |
+| [冬酒暖阳](https://github.com/allwaysLove) | [mailto:1067764354@qq.com](mailto:1067764354@qq.com) | [博客：www.lifepoem.cn](https://www.lifepoem.cn) |
 
-## 界面展示
+## :postal_horn: 界面展示
 
 1. 后台管理界面
 
     ![image-20200626121647852](https://cos.lifepoem.cn/assignments/imgs/20200626121657.png)
 
-2. 获取接口简单使用说明
+2. 作业管理页面
+
+    ![image-20200626134401797](https://cos.lifepoem.cn/assignments/imgs/20200626134401.png)
+
+3. 获取接口简单使用说明
 
     ![image-20200626133850532](https://cos.lifepoem.cn/assignments/imgs/20200626133850.png)
-
-
 
 ## :hammer: 安装
 
