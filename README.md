@@ -1,4 +1,4 @@
-# 作业管理系统（SchoolAssignmentManageSystem）
+# 作业管理系统
 
 [![My Blog](https://img.shields.io/badge/Blog-lifepoem-orange.svg?style=flat-square)](http://www.lifepoem.cn/) [![Python Version](https://img.shields.io/badge/Python-3.6|3.7|3.8-success.svg?style=flat-square)](https://www.python.org/) [![Release latest](https://img.shields.io/badge/Release-latest-blue.svg?style=flat-square)](https://github.com/allwaysLove/ChaoXing-Automatic-watch-Course/releases) [![MIT License](https://img.shields.io/badge/LICENSE-MIT-yellow.svg?style=flat-square)](https://github.com/allwaysLove/ChaoXing-Automatic-watch-Course/blob/master/LICENSE)
 
@@ -12,23 +12,21 @@
 
 ## :sparkling_heart: 作者
 
-| Author                                     | E-mail                                               | Blog                                             |
-| ------------------------------------------ | ---------------------------------------------------- | ------------------------------------------------ |
-| [冬酒暖阳](https://github.com/allwaysLove) | [mailto:1067764354@qq.com](mailto:1067764354@qq.com) | [博客：www.lifepoem.cn](https://www.lifepoem.cn) |
+| Author                                     | E-mail                                               | Blog                                     |
+| ------------------------------------------ | ---------------------------------------------------- | ---------------------------------------- |
+| [冬酒暖阳](https://github.com/allwaysLove) | [mailto:1067764354@qq.com](mailto:1067764354@qq.com) | [博客：www.lifepoem.cn](www.lifepoem.cn) |
 
-## :postal_horn: 界面展示
+## 界面展示
 
 1. 后台管理界面
 
     ![image-20200626121647852](https://cos.lifepoem.cn/assignments/imgs/20200626121657.png)
 
-2. 作业管理页面
-
-    ![image-20200626134401797](https://cos.lifepoem.cn/assignments/imgs/20200626134401.png)
-
-3. 获取接口简单使用说明
+2. 获取接口简单使用说明
 
     ![image-20200626133850532](https://cos.lifepoem.cn/assignments/imgs/20200626133850.png)
+
+
 
 ## :hammer: 安装
 
