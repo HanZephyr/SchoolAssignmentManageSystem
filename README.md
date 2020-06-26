@@ -35,7 +35,7 @@
 1. 通过源代码安装
 
     ```shell
-    git clone https://github.com/allwaysLove/SchoolAssignmentManageSystem
+    git clone https://github.com/allwaysLove/SchoolAssignmentManageSystem.git
     python -m pip install -r requirements.txt
     ```
 
