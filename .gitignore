@@ -1,6 +1,8 @@
 # using settings
 .gitignore
-./db.sqlite3
+db.sqlite3
+tree.py
+tree.txt
 .vscode/
 .idea/
 SchoolAssignmentListManage/migrations/
