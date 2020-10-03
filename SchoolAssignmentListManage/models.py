@@ -7,10 +7,10 @@ from django.db import models
 # Create your models here.
 
 # 课程名
-from django.forms import forms, ModelForm
 from django.utils import timezone
 
 from SchoolAssignmentListManage.diy_widgets import ImageInput, UploadModel
+from Course.models import Course
 
 
 class ScheduleName(models.Model):
@@ -26,10 +26,11 @@ class ScheduleName(models.Model):
     def __str__(self):
         return self.schedule_name
 
+
 class AssignmentInfo(models.Model):
 
     # 课程名
-    schedule_name = models.ForeignKey(ScheduleName, on_delete=models.CASCADE, verbose_name='课程名称')
+    course_name = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name='课程名称')
 
     # 作业信息
     assignmentInfo = models.CharField(verbose_name='作业内容', max_length=500)
@@ -46,10 +47,10 @@ class AssignmentInfo(models.Model):
     # is_need_upload_file = models.BooleanField(verbose_name='是否需要上传文件', default=False)
 
     # 文件
-    upload_file = models.FileField(verbose_name='上传文件', blank=True, upload_to='..//static/uploadFile/',)
+    file = models.FileField(verbose_name='文件', upload_to='file/', blank=True, null=True, default=None)
 
     # 图片
-    # pic = models.ImageField(verbose_name='图片', blank=True, null=True, default=None)
+    image = models.ImageField(verbose_name='图片', upload_to='image/', blank=True, null=True, default=None)
 
     # images = forms.FileField(label="图片", widget=ImageInput, help_text="按住ctrl多选,最多4张", required=False)
 

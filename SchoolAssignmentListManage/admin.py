@@ -7,17 +7,16 @@ from datetime import datetime, timedelta
 from SchoolAssignmentListManage.models import *
 
 from import_export import resources
-from import_export.admin import ImportExportModelAdmin, ImportExportActionModelAdmin
 
-
-@admin.register(ScheduleName)
-class ScheduleNameAdmin(admin.ModelAdmin):
-    # pk：索引
-    # 属性 list_display 表示要显示哪些属性
-    list_display = ['pk', 'schedule_name']
-    list_display_links = ('pk', 'schedule_name')
-
-    ordering = ('pk',)
+#
+# @admin.register(ScheduleName)
+# class ScheduleNameAdmin(admin.ModelAdmin):
+#     # pk：索引
+#     # 属性 list_display 表示要显示哪些属性
+#     list_display = ['pk', 'course_name']
+#     list_display_links = ('pk', 'course_name')
+#
+#     ordering = ('pk',)
 
 
 class EndTimeListFilter(admin.SimpleListFilter):
@@ -88,24 +87,24 @@ class AssignmentInfoResource(resources.ModelResource):
 
 @admin.register(AssignmentInfo)
 class AssignmentInfoAdmin(admin.ModelAdmin):
-    list_display = ['pk', 'schedule_name',
+    list_display = ['pk', 'course_name',
                     'assignmentInfo', 'start_time', 'end_time']
 
     search_fields = ('assignmentInfo',)
 
-    list_filter = ('schedule_name', EndTimeListFilter,
+    list_filter = ('course_name', EndTimeListFilter,
                    TimeOutListFilter, 'end_time')
 
-    list_display_links = ('pk', 'schedule_name')
+    list_display_links = ('pk', 'course_name')
 
     list_editable = ('assignmentInfo', 'start_time', 'end_time')
 
-    fieldsets = [(None, {'fields': ['schedule_name', 'assignmentInfo', 'start_time', 'end_time']}),
+    fieldsets = [(None, {'fields': ['course_name', 'assignmentInfo', 'start_time', 'end_time']}),
                  (u'其他信息', {
-                     'fields': ['additionalInfo', 'upload_file']})]
+                     'fields': ['additionalInfo', 'file', 'image']})]
 
     ordering = ('end_time', '-start_time')
 
 
-admin.site.site_title = '作业管理后台'
-admin.site.site_header = '作业管理后台'
+admin.site.site_title = '教学管理后台'
+admin.site.site_header = '教学管理后台'

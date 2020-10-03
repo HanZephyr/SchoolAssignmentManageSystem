@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Course',
     'SchoolAssignmentListManage'
 ]
 
@@ -126,3 +127,15 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Media dir
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+SIMPLEUI_ICON = {
+    '作息时间表管理': 'fa fa-bell',
+    '学期管理': 'fa fa-graduation-cap',
+    '课程表管理': 'fa fa-calendar',
+    '作业信息管理': 'fa fa-list-ul',
+    '作业管理': 'fa fa-check-square'
+}

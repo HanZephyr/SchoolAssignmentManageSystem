@@ -4,5 +4,5 @@ from django.apps import AppConfig
 
 class SchoolassignmentlistmanageConfig(AppConfig):
     name = 'SchoolAssignmentListManage'
-    verbose_name = "综合管理"
+    verbose_name = "作业信息管理"
 

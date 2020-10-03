@@ -70,14 +70,14 @@ def get_assignments(request):
         else:
             return HttpResponseNotFound(content='<h1>请正确传入参数：days（天数）！</ph1')
 
-    schedule_name_queryset = ScheduleName.objects.all().values_list()
+    course_name_queryset = courseName.objects.all().values_list()
 
-    if not schedule_name_queryset.values_list().count():
+    if not course_name_queryset.values_list().count():
         return HttpResponseNotFound(content='<h1>课程名称列表 为空！</h1>')
 
-    schedule_name_dict = dict(tuple(schedule_name_queryset))
+    course_name_dict = dict(tuple(course_name_queryset))
 
-    print('schedule_name_dict：', schedule_name_dict)
+    print('course_name_dict：', course_name_dict)
     assignment_dict = dict()
 
     if not (res_end_time_Queryset.values_list().count() or res_end_time_null_Queryset.values_list().count()):
@@ -85,25 +85,25 @@ def get_assignments(request):
 
     if res_end_time_Queryset and res_end_time_Queryset.values_list().count():
         for assignment in res_end_time_Queryset.values_list():
-            schedule_name = schedule_name_dict[assignment[1]]
+            course_name = course_name_dict[assignment[1]]
 
             print(f"（截止时间：{assignment[4].strftime(' ')}）")
 
-            if schedule_name not in assignment_dict:
-                assignment_dict[schedule_name] = [assignment[2] +
+            if course_name not in assignment_dict:
+                assignment_dict[course_name] = [assignment[2] +
                                                   f"（截止时间：{assignment[4].strftime('%m{M}%d{D} %H:%M').format(M='月', D='日')}）"]
             else:
-                assignment_dict[schedule_name].append(assignment[2] +
+                assignment_dict[course_name].append(assignment[2] +
                                                       f"（截止时间：{assignment[4].strftime('%m{M}%d{D} %H:%M').format(M='月', D='日')}）")
 
     if res_end_time_null_Queryset and res_end_time_null_Queryset.values_list().count():
         for assignment in res_end_time_null_Queryset.values_list():
-            schedule_name = schedule_name_dict[assignment[1]]
+            course_name = course_name_dict[assignment[1]]
 
-            if schedule_name not in assignment_dict:
-                assignment_dict[schedule_name] = [assignment[2]]
+            if course_name not in assignment_dict:
+                assignment_dict[course_name] = [assignment[2]]
             else:
-                assignment_dict[schedule_name].append(assignment[2])
+                assignment_dict[course_name].append(assignment[2])
 
     print('assignment_dict', assignment_dict)
 

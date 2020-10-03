@@ -22,6 +22,7 @@ from SchoolAssignmentListManage import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'course/', include('Course.urls', namespace='course')),
     url(r'assignments/', include('SchoolAssignmentListManage.urls', namespace='assignments'))
 ]
 
