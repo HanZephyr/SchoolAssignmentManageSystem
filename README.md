@@ -54,7 +54,7 @@
 
     ```shell
     # 创建超级用户（管理员）
-    python manage.py makesuperuser
+    python manage.py createsuperuser
     # 依据模型迁移构建数据库表
     python manage.py makemigrations
     python manage.py migrate
