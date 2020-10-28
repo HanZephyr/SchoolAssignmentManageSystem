@@ -101,7 +101,7 @@ class ClassScheduleAdmin(admin.ModelAdmin):
 
     list_display_links = ('pk', 'course')
 
-    list_editable = ('is_suspend',)
+    list_editable = ('weeks', 'is_suspend',)
 
     # ordering = ('-start_date', )
     ordering = ('pk',)

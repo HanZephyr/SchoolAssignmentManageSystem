@@ -12,9 +12,9 @@
 
 ## :sparkling_heart: 作者
 
-| Author                                     | E-mail                                               | Blog                                             |
-| ------------------------------------------ | ---------------------------------------------------- | ------------------------------------------------ |
-| [冬酒暖阳](https://github.com/allwaysLove) | [mailto:1067764354@qq.com](mailto:1067764354@qq.com) | [博客：www.lifepoem.cn](https://www.lifepoem.cn) |
+| Author                                     | E-mail                                        | Blog                                             |
+| ------------------------------------------ | --------------------------------------------- | ------------------------------------------------ |
+| [冬酒暖阳](https://github.com/allwaysLove) | [1067764354@qq.com](mailto:1067764354@qq.com) | [博客：www.lifepoem.cn](https://www.lifepoem.cn) |
 
 ## :postal_horn: 界面展示
 
@@ -26,7 +26,11 @@
 
     ![作业管理界面](README-images/作业管理界面.png)
 
-3. 获取接口简单使用说明
+3. 课程表管理系统
+
+    ![获取接口简单使用说明](README-images/课程管理界面.png)
+    
+4. 获取接口简单使用说明
 
     ![获取接口简单使用说明](README-images/获取接口简单使用说明.png)
 
@@ -52,7 +56,7 @@
     # 创建超级用户（管理员）
     python manage.py makesuperuser
     # 依据模型迁移构建数据库表
-    python manage.py makemigrations SchoolAssignmentListManage
+    python manage.py makemigrations
     python manage.py migrate
     ```
 
@@ -62,7 +66,7 @@
     python manage.py runserver 0.0.0.0:8000
     ```
 
-4. 随后便可在本地浏览器访问 http://localhost:8000/admin 看到作业管理系统
+4. 随后便可在本地浏览器访问 http://localhost:8000/admin 看到作业管理系统，登陆用户名及密码即为刚才创建的超级用户的用户名与密码
 
 
 
@@ -75,6 +79,16 @@ SchoolAssignmentManageSystem/
 ├────manage.py
 ├────README.md
 ├────requirements.txt
+├────Course/
+│    ├────__init__.py
+│    ├────migrations/
+│    ├────admin.py
+│    ├────apps.py
+│    ├────CourseSerializer.py
+│    ├────models.py
+│    ├────tests.py
+│    ├────urls.py
+│    └────views.py
 ├────SchoolAssignmentListManage/
 │    ├────__init__.py
 │    ├────admin.py

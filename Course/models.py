@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+# from multiselectfield import MultiSelectField
 
 
 class ListField(models.CharField):
@@ -114,12 +115,14 @@ class ClassSchedule(models.Model):
         (4, '星期四'),
         (5, '星期五'),
         (6, '星期六'),
-        (0, '星期日')
+        (7, '星期日')
     )
     week_day = models.IntegerField(choices=week_day_choices, verbose_name='星期几')
     # 教室
     classroom = models.CharField(max_length=50, verbose_name='教室')
     # 周次
+    weeks_choices = tuple([(i, i) for i in range(1, 21)])
+    # weeks = MultiSelectField(choices=weeks_choices, max_length=256, verbose_name='周次')
     weeks = ListField(max_length=256, verbose_name='周次')
     # 节次
     lesson = models.ForeignKey(LessonSchedule, on_delete=models.CASCADE, verbose_name='节次')

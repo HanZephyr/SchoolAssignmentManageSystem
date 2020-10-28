@@ -11,6 +11,7 @@ from rest_framework.decorators import api_view
 from datetime import datetime, timedelta
 from json import dumps
 from .models import *
+from Course.models import Course
 
 
 # def get_assignment(request, assignment_type, days=None):
@@ -19,7 +20,7 @@ from .models import *
 def get_assignments(request):
     """获取每周作业
     :param request: 请求
-    # :param assignment_type: 获取作业类型（info：使用说明，week：本周未超时作业，all_effective：所有未超时）
+    # :param assignment_type: 获取作业类型（info：使用说明，week：本周未超时作业，all_effective：所有未超时，today：当天发布的作业）
     # :param days: 最近几天的作业（当 assignment_type 为 days 时，必须输入 days）
     """
 
@@ -32,7 +33,7 @@ def get_assignments(request):
     if assignment_type == 'info':
         info = [
             '<h1>使用说明</h1>',
-            '<p><b>assignment_type:</b> 获取作业类型（<b>info：</b>使用说明，<b>week：</b>本周未超时作业，<b>all_effective：</b>所有未超时）</p>',
+            '<p><b>assignment_type:</b> 获取作业类型（<b>info：</b>使用说明，<b>week：</b>本周未超时作业，<b>all_effective：</b>所有未超时），<b>today：</b>当天发布的作业）</p>',
             '<p><b>days:</b> 最近几天的作业（当 assignment_type 为 days 时，必须输入 days 参数，表示最近几天）</p>'
         ]
         response = '\n'.join(info)
@@ -65,17 +66,29 @@ def get_assignments(request):
             print(day)
             res_end_time_Queryset = AssignmentInfo.objects.filter(
                 end_time__isnull=False, end_time__lte=day, end_time__gte=cur_date)
-            res_end_time_null_Queryset = None
+            res_end_time_null_Queryset = AssignmentInfo.objects.none()
 
         else:
             return HttpResponseNotFound(content='<h1>请正确传入参数：days（天数）！</ph1')
+    elif assignment_type == 'today':
+        cur_date = datetime.now()
+        year = cur_date.year
+        month = cur_date.month
+        day = cur_date.day
+        cur_date_start = datetime(year, month, day)
+        cur_date_end = datetime(year, month, day + 1)
+        res_end_time_Queryset = AssignmentInfo.objects.filter(
+            start_time__gte=cur_date_start,
+            start_time__lt=cur_date_end
+        )
+        res_end_time_null_Queryset = AssignmentInfo.objects.none()
 
-    course_name_queryset = courseName.objects.all().values_list()
-
+    course_name_queryset = Course.objects.all().values_list()
+    print(course_name_queryset)
     if not course_name_queryset.values_list().count():
         return HttpResponseNotFound(content='<h1>课程名称列表 为空！</h1>')
 
-    course_name_dict = dict(tuple(course_name_queryset))
+    course_name_dict = dict(tuple((item[0], item[1]) for item in course_name_queryset))
 
     print('course_name_dict：', course_name_dict)
     assignment_dict = dict()
@@ -86,15 +99,18 @@ def get_assignments(request):
     if res_end_time_Queryset and res_end_time_Queryset.values_list().count():
         for assignment in res_end_time_Queryset.values_list():
             course_name = course_name_dict[assignment[1]]
-
-            print(f"（截止时间：{assignment[4].strftime(' ')}）")
-
+            # print('!!!')
+            # print(f"（截止时间：{assignment[4].strftime(' ')}）" if assignment[4] else '')
+            # print('!!!')
             if course_name not in assignment_dict:
                 assignment_dict[course_name] = [assignment[2] +
-                                                  f"（截止时间：{assignment[4].strftime('%m{M}%d{D} %H:%M').format(M='月', D='日')}）"]
+                                                (f"（截止时间：{assignment[4].strftime('%m{M}%d{D} %H:%M').format(M='月', D='日')}）" if assignment[4] else '')
+                                                ]
             else:
-                assignment_dict[course_name].append(assignment[2] +
-                                                      f"（截止时间：{assignment[4].strftime('%m{M}%d{D} %H:%M').format(M='月', D='日')}）")
+                assignment_dict[course_name].append(
+                    assignment[2] +
+                    (f"（截止时间：{assignment[4].strftime('%m{M}%d{D} %H:%M').format(M='月', D='日')}）" if assignment[4] else '')
+                )
 
     if res_end_time_null_Queryset and res_end_time_null_Queryset.values_list().count():
         for assignment in res_end_time_null_Queryset.values_list():
