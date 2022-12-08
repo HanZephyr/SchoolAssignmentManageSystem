@@ -1,7 +1,7 @@
 asgiref==3.2.5              
 astroid==2.3.3              
 autopep8==1.5                
-certifi==2020.4.5.1         
+certifi==2022.12.7         
 colorama==0.4.3              
 defusedxml==0.6.0              
 diff-match-patch==20181111           
