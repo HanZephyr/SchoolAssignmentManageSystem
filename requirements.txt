@@ -29,7 +29,7 @@ setuptools==65.5.1
 six==1.14.0             
 sqlparse==0.3.0              
 tablib==1.1.0              
-wheel==0.34.2             
+wheel==0.38.1             
 wincertstore==0.2                
 wrapt==1.11.1             
 xlrd==1.2.0              
