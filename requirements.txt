@@ -27,7 +27,7 @@ pytz==2019.3
 PyYAML==5.4              
 setuptools==65.5.1
 six==1.14.0             
-sqlparse==0.3.0              
+sqlparse==0.4.4              
 tablib==1.1.0              
 wheel==0.38.1             
 wincertstore==0.2                
