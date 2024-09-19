@@ -1,14 +1,16 @@
 # using settings
 .gitignore
-db.sqlite3
 tree.py
 tree.txt
 .vscode/
 .idea/
-SchoolAssignmentListManage/migrations/
 SchoolAssignmentListManage/admin副本.py
 
-Course/migrations/
+# 忽略所有 migrations 目录下的 .py 文件
+**/migrations/*.py
+
+# 但不忽略 __init__.py
+!**/migrations/__init__.py
 
 # default settings
 
